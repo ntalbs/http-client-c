@@ -1,20 +1,18 @@
 package.Seongjun-http-client = {
     interfaces = (1.0);
 
-    # Use NoOpBuild. See https://w.amazon.com/index.php/BrazilBuildSystem/NoOpBuild
-    build-system = no-op;
+    build-system = make;
     build-tools = {
         1.0 = {
-            NoOpBuild = 1.0;
+            GnuMake = 4.x;
+            BrazilPath = 1.1;
         };
     };
 
-    # Use runtime-dependencies for when you want to bring in additional
-    # packages when deploying.
-    # Use dependencies instead if you intend for these dependencies to
-    # be exported to other packages that build against you.
     dependencies = {
         1.0 = {
+            CRuntime = 1.0;
+            Openssl = 3.x;
         };
     };
 
